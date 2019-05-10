@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home.component';
 import { RouterModule } from '@angular/router';
-import { PostPreviewModule } from '../post-preview/post-preview.module';
+import { PostPreviewModule } from '../posts/post-preview/post-preview.module';
 import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
