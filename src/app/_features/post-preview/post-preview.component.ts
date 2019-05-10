@@ -16,7 +16,9 @@ export class PostPreviewComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    console.log(this.post)
+    this.httpClient.get(`assets/posts/${this.post.fileName}.md`).subscribe(res => {
+      console.log(res)
+    })
   }
 
 }

@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
 
   posts = [
-    {file: 'bash-tips-and-tricks'}
+    {fileName: 'bash-tips-and-tricks'}
   ]
 
   constructor() { }
