@@ -6,7 +6,8 @@ import { RouterModule } from '@angular/router';
   imports: [
     CommonModule,
     RouterModule.forChild([
-      {path: '', loadChildren: '../_features/home/home.module#HomeRouterModule'}
+      {path: '', loadChildren: '../_features/home/home.module#HomeRouterModule'},
+      {path: ':postSlug', loadChildren: '../_features/post/post.module#PostRouterModule'},
     ])
   ],
   declarations: []
