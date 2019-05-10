@@ -1,7 +1,7 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "baseUrl": "./",
+    "baseUrl": "src",
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
     "declaration": false,
@@ -19,7 +19,7 @@
       "dom"
     ],
     "paths": {
-      "@_api/*": ["src/app/_api/*"]
+      "@_api/*": ["app/_api/*"]
     }
   }
 }
