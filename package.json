@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "deploy:prod": "ng build --prod --base-href https://venjoy.github.io/venjoy.github.io",
+    "deploy:prod": "ng build --prod --base-href https://venjoy.github.io",
     "deploy:npx": "export $(grep -v '^#' .env | xargs -d '\n') && npx angular-cli-ghpages --repo=https://shavipathania:$GITHUB_TOKEN@github.com/venjoy/venjoy.github.io.git --branch=master --name='Shavi Pathania' --email='$EMAIL' --dir=dist/venjoy-github-io",
     "deploy": "npm run deploy:prod && npm run deploy:npx"
   },
