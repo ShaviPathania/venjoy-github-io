@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
-export class PostsService {
+export class Posts {
 
   constructor(
     private httpClient: HttpClient
@@ -12,7 +13,7 @@ export class PostsService {
 
   list() {
     const url = 'assets/data/posts.json';
-    return this.httpClient.get(url);
+    return <Observable<any[]>> this.httpClient.get(url);
   }
 
 }
