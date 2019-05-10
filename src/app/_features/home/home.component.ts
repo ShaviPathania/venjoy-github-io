@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-home',
@@ -8,12 +9,19 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
 
   posts = [
-    {fileName: 'bash-tips-and-tricks'}
   ]
 
-  constructor() { }
+  constructor(
+    private httpClient: HttpClient,
+  ) { }
 
   ngOnInit() {
+    this.loadPosts();
+  }
+
+  loadPosts() {
+    const url = 'assets/data/posts.json';
+    this.httpClient.get(url).subscribe((posts: []) => this.posts = posts)
   }
 
 }

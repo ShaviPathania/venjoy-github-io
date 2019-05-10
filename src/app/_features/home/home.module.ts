@@ -3,11 +3,13 @@ import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home.component';
 import { RouterModule } from '@angular/router';
 import { PostPreviewModule } from '../post-preview/post-preview.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   imports: [
     CommonModule,
     PostPreviewModule,
+    HttpClientModule,
   ],
   declarations: [HomeComponent]
 })
