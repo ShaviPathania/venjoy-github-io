@@ -8,9 +8,6 @@ import { HttpClient } from '@angular/common/http';
 })
 export class HomeComponent implements OnInit {
 
-  posts = [
-  ]
-
   constructor(
     private httpClient: HttpClient,
   ) { }
@@ -19,9 +16,6 @@ export class HomeComponent implements OnInit {
     this.loadPosts();
   }
 
-  loadPosts() {
-    const url = 'assets/data/posts.json';
-    this.httpClient.get(url).subscribe((posts: []) => this.posts = posts)
-  }
+  
 
 }
