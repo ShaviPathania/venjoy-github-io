@@ -14,17 +14,4 @@ steps:
   args: ['install']
 
 - name: 'gcr.io/cloud-builders/npm'
-  args: ['run', 'build']
-
-- name: gcr.io/cloud-builders/git
-  entrypoint: 'bash'
-  args: 
-  - '-c'
-  - "git clone https://github.com/venjoy/venjoy.github.io && 
-    export $(grep -v '^#' .env | xargs -d '\n') &&
-    cp -rf dist/demo venjoy.github.io && 
-    git config --global user.email '$$EMAIL' &&
-    git config --global user.name 'Shavi Pathania' &&
-    git add . &&
-    git commit -m 'auto' &&
-    git push https://shavipathania:$$GITHUB_TOKEN@github.com/venjoy/venjoy.github.io.git master"
+  args: ['run', 'deploy']
