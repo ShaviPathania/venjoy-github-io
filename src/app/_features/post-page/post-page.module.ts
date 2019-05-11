@@ -1,10 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PostPageComponent } from './post-page.component';
+import { PageHeaderModule } from '../_page/page-header/page-header.module';
+import { PageFooterModule } from '../_page/page-footer/page-footer.module';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    PageHeaderModule,
+    PageFooterModule,
   ],
   declarations: [PostPageComponent]
 })
