@@ -16,4 +16,8 @@ export class Posts {
     return <Observable<any[]>> this.httpClient.get(url);
   }
 
+  postMdPath(post: any) {
+    return '';
+  }
+
 }
