@@ -1,12 +1,15 @@
 <mat-toolbar>
 	<mat-toolbar-row>
-    <div class="_logo">
+    <div routerLink="/" class="_logo">
       <img src="https://raw.githubusercontent.com/shavipathania/venjoy-github-io/develop/src/assets/branding/logo.png" alt="Logo">
       <span>Venjoy</span>
     </div>
   </mat-toolbar-row>
 
   <mat-toolbar-row>
-    <span>Second Line</span>
+    <nav>
+      <a class="_active" routerLink="/">Home</a>
+      <a routerLink="/bash">Bash</a>
+    </nav>
   </mat-toolbar-row>
 </mat-toolbar>

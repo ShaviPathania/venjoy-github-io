@@ -24,7 +24,7 @@ export class Posts {
   }
 
   postMdPath(post: any) {
-    return post.fileFullPath.replace('assets/data/posts/', '');
+    return post.mdFullPath.replace('assets/data/posts/', '');
   }
 
 }

@@ -2,6 +2,8 @@
   padding-top: 15px;
   position: relative;
   z-index: 1;
+  outline: none;
+  cursor: point
   img {
     position: relative;
     width: 50px;
@@ -15,5 +17,18 @@
     z-index: 0;
     font-size: 48px;
     color: #fa2c37;
+  }
+}
+
+nav {
+  a {
+    font-size: 15px;
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.54);
+    margin-right: 20px;
+    font-weight: 400;
+  }
+  a._active {
+    color: rgba(0, 0, 0, 0.84);
   }
 }
