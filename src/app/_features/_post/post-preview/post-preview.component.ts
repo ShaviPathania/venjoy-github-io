@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Api } from '../../../_api';
 
 @Component({
   selector: 'app-post-preview',
@@ -11,6 +12,7 @@ export class PostPreviewComponent implements OnInit {
   post: any;
 
   constructor(
+    private api: Api
   ) { }
 
   ngOnInit() {
@@ -18,7 +20,7 @@ export class PostPreviewComponent implements OnInit {
   }
 
   getPath() {
-    
+    return this.api.posts.postMdPath(this.post);
   }
 
 }

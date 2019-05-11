@@ -13,13 +13,3 @@ import { HttpClientModule } from '@angular/common/http';
   declarations: [PostComponent]
 })
 export class PostModule { }
-
-@NgModule({
-  imports: [
-    PostModule,
-    RouterModule.forChild([
-      {path: '', component: PostComponent}
-    ])
-  ]
-})
-export class PostRouterModule { }
