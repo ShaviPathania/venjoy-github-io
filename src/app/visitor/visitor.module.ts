@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { DefaultLayoutModule } from '../_layouts/default-layout/default-layout.module';
-import { DefaultLayoutComponent } from '../_layouts/default-layout/default-layout.component';
+import { DefaultLayoutModule } from '../_design/default-layout/default-layout.module';
+import { DefaultLayoutComponent } from '../_design/default-layout/default-layout.component';
 
 @NgModule({
   imports: [
