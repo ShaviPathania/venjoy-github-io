@@ -10,6 +10,9 @@ import { HttpClientModule } from '@angular/common/http';
     RouterModule,
     HttpClientModule,
   ],
+  exports: [
+    PostComponent
+  ],
   declarations: [PostComponent]
 })
 export class PostModule { }
