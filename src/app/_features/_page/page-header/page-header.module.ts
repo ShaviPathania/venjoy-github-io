@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PageHeaderComponent } from './page-header.component';
+import { MatToolbarModule } from '@angular/material';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    MatToolbarModule,
   ],
   exports: [
     PageHeaderComponent,
