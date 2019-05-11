@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Api } from '../../../_api';
+import { Api } from '../../_api';
 
 @Component({
   selector: 'app-post-preview',
