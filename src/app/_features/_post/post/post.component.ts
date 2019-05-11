@@ -13,6 +13,7 @@ import { Api } from '../../../_api';
 export class PostComponent implements OnInit {
 
   md: any = ''
+  loading = false
 
   constructor(
     private router: Router,
@@ -26,9 +27,11 @@ export class PostComponent implements OnInit {
   }
 
   loadPost(path: string) {
+    this.loading = true;
     const converter = new showdown.Converter();
     this.api.posts.retrievePostMdByPath(path).subscribe(text => {
       this.md = this.domSanitizer.bypassSecurityTrustHtml(converter.makeHtml(text));
+      this.loading = false;
     })
   }
 
