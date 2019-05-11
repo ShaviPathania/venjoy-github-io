@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PageHeaderComponent } from './page-header.component';
+import { DefaultHeaderComponent } from './default-header.component';
 import { MatToolbarModule } from '@angular/material';
 import { RouterModule } from '@angular/router';
 
@@ -11,8 +11,8 @@ import { RouterModule } from '@angular/router';
     RouterModule,
   ],
   exports: [
-    PageHeaderComponent,
+    DefaultHeaderComponent,
   ],
-  declarations: [PageHeaderComponent]
+  declarations: [DefaultHeaderComponent]
 })
-export class PageHeaderModule { }
+export class DefaultHeaderModule { }
