@@ -19,8 +19,8 @@ export class VisitorModule { }
     RouterModule.forChild([
       {
         path: '', component: DefaultLayoutComponent, children: [
-          { path: '', loadChildren: '../_features/home-page/home-page.module#HomePageRouterModule' },
-          { path: '**', loadChildren: '../_features/post-page/post-page.module#PostPageRouterModule' },
+          { path: '', loadChildren: '../_features/posts/posts.module#PostsRouterModule' },
+          { path: '**', loadChildren: '../_features/post/post.module#PostRouterModule' },
         ]
       }
     ])
