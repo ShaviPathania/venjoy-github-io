@@ -15,7 +15,7 @@ import { AppComponent } from './app.component';
     BrowserAnimationsModule,
     HttpClientModule,
     RouterModule.forRoot([
-      {path: '', loadChildren: './visitor/visitor.module#VisitorModule'}
+      {path: '', loadChildren: './visitor/visitor.module#VisitorRouterModule'}
     ])
   ],
   bootstrap: [AppComponent],

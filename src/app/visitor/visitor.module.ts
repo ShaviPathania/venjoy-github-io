@@ -8,6 +8,14 @@ import { DefaultLayoutComponent } from '../_design/default-layout/default-layout
   imports: [
     CommonModule,
     DefaultLayoutModule,
+  ],
+  declarations: []
+})
+export class VisitorModule { }
+
+@NgModule({
+  imports: [
+    VisitorModule,
     RouterModule.forChild([
       {
         path: '', component: DefaultLayoutComponent, children: [
@@ -17,6 +25,5 @@ import { DefaultLayoutComponent } from '../_design/default-layout/default-layout
       }
     ])
   ],
-  declarations: []
 })
-export class VisitorModule { }
+export class VisitorRouterModule { }
