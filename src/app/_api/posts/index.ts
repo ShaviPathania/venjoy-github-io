@@ -16,6 +16,13 @@ export class Posts {
     return <Observable<any[]>> this.httpClient.get(url);
   }
 
+  retrievePostMdByPath(path: string) {
+    const url = `assets/data/posts/${path}`;
+    return <Observable<string>> this.httpClient.get(url, {
+      responseType: 'text'
+    });
+  }
+
   postMdPath(post: any) {
     return post.fileFullPath.replace('assets/data/posts/', '');
   }
