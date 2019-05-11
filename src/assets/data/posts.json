@@ -2,7 +2,6 @@
   {
     "title": "Bash Tips & Tricks",
     "excerpt": "Get usefull tips and tricks for everyday use.",
-    "slug": "bash-tips-and-tricks",
-    "fileFullPath": "assets/data/posts/bash-tips-and-tricks.md"
+    "mdFullPath": "assets/data/posts/bash/bash-tips-and-tricks.md"
   }
 ]
