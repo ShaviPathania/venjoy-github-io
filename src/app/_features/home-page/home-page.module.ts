@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HomeComponent } from './home.component';
+import { HomePageComponent } from './home-page.component';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { PostsModule } from '../_post/posts/posts.module';
@@ -15,16 +15,16 @@ import { PageFooterModule } from '../_page/page-footer/page-footer.module';
     PageHeaderModule,
     PageFooterModule,
   ],
-  declarations: [HomeComponent]
+  declarations: [HomePageComponent]
 })
-export class HomeModule { }
+export class HomePageModule { }
 
 @NgModule({
   imports: [
-    HomeModule,
+    HomePageModule,
     RouterModule.forChild([
-      {path: '', component: HomeComponent}
+      {path: '', component: HomePageComponent}
     ])
   ]
 })
-export class HomeRouterModule { }
+export class HomePageRouterModule { }
