@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Posts } from './posts';
-import { Oauth } from './oauth';
+import { Github } from './github';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +9,7 @@ export class Api {
 
   constructor(
     public posts: Posts,
-    public oauth: Oauth,
+    public github: Github,
   ) { }
 
 }

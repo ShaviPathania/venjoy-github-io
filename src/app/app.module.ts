@@ -16,6 +16,13 @@ const ROUTES = [
     ],
   },
   {
+    path: 'manage-posts',
+    component: DefaultLayoutComponent,
+    children: [
+      { path: '', loadChildren: './features/manage-posts/manage-posts.module#ManagePostsRouterModule' },
+    ],
+  },
+  {
     path: '',
     component: DefaultLayoutComponent, children: [
       { path: '', loadChildren: './features/posts/posts.module#PostsRouterModule' },

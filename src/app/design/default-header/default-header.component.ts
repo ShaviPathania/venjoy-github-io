@@ -19,8 +19,14 @@ export class DefaultHeaderComponent implements OnInit {
 
   ngOnInit() {
     this.subscriptions.push(
-      this.api.oauth.isLoggedIn().subscribe(r => this.loggedIn = r)
+      this.api.github.isLoggedIn().subscribe(r => {
+        this.loggedIn = r;
+      })
     )
+  }
+
+  logout() {
+    this.api.github.logout();
   }
 
   ngOnDestroy() {
