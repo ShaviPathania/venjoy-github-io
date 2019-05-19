@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Api } from '../../_api';
+import { Api } from '../../api';
 
 @Component({
   selector: 'app-posts',

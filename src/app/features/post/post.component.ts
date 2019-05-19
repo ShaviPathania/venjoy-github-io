@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import * as showdown from 'showdown';
 import { DomSanitizer } from '@angular/platform-browser';
-import { Api } from '../../_api';
+import { Api } from '../../api';
 
 @Component({
   selector: 'app-post',

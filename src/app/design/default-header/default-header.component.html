@@ -5,8 +5,11 @@
       <span>Venjoy</span>
     </div>
     <span class="_spacer"></span>
-    <button routerLink="/oauth/login" mat-icon-button>
+    <button *ngIf="!loggedIn" routerLink="/oauth/login" mat-icon-button>
       <mat-icon class="_icon">input</mat-icon>
+    </button>
+    <button *ngIf="loggedIn" (click)="logout()" mat-icon-button>
+      <mat-icon class="_icon">exit_to_app</mat-icon>
     </button>
   </mat-toolbar-row>
 
