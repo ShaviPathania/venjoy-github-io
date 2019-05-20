@@ -1,6 +1,11 @@
 <div class="_container">
   <mat-card>
-    <h3>Manage Posts</h3>
+    <h3>
+      <span>
+      Manage Posts
+      </span>
+      <a routerLink="/post-editor" mat-raised-button color="primary" style="float: right">New</a>
+    </h3>
     <mat-form-field>
       <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
     </mat-form-field>

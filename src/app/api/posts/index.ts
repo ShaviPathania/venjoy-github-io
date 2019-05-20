@@ -58,14 +58,15 @@ export class Posts {
     return 'assets/data/posts/' + mdPath;
   }
 
-  async save(post: Post) {
+  async save(post: Post, postMd: string) {
     const posts = await this.list().toPromise();
     if (post.id >= 0) {
       posts[post.id] = post;
     } else {
       posts.push(post);
     }    
-    return this.github.saveFile('src/assets/data/posts.json', JSON.stringify(posts));
+    await this.github.saveFile('src/assets/data/posts.json', JSON.stringify(posts));
+    await this.github.saveFile('src/'+post.mdFullPath, postMd);
   }
 
 }
