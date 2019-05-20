@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ManagePostsComponent } from './manage-posts.component';
 import { RouterModule } from '@angular/router';
-import { MatFormFieldModule, MatInputModule, MatTableModule, MatPaginatorModule, MatSortModule, MatButtonModule, MatIconModule, } from '@angular/material'; 
+import { MatFormFieldModule, MatInputModule, MatTableModule, MatPaginatorModule, MatSortModule, MatButtonModule, MatIconModule, MatCardModule } from '@angular/material'; 
 
 @NgModule({
   imports: [
@@ -15,14 +15,15 @@ import { MatFormFieldModule, MatInputModule, MatTableModule, MatPaginatorModule,
     MatButtonModule,
     MatIconModule,
     RouterModule,
+    MatCardModule,
   ],
   declarations: [ManagePostsComponent]
 })
-export class ListPostsModule { }
+export class ManagePostsModule { }
 
 @NgModule({
   imports: [
-    ListPostsModule,
+    ManagePostsModule,
     RouterModule.forChild([
       {
         path: '', 
@@ -31,4 +32,4 @@ export class ListPostsModule { }
     ])
   ],
 })
-export class ListPostsRouterModule { }
+export class ManagePostsRouterModule { }
