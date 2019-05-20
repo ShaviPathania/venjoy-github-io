@@ -15,7 +15,10 @@ export class ListPostsModule { }
   imports: [
     ListPostsModule,
     RouterModule.forChild([
-      {path: '', component: ListPostsComponent}
+      {
+        path: '', 
+        component: ListPostsComponent
+      }
     ])
   ],
 })

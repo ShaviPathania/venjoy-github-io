@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { DefaultLayoutComponent, DefaultLayoutModule } from './design/default-layout';
+import { OauthGuard } from './oauth/oauth.guard';
 
 import { AppComponent } from './app.component';
 
@@ -12,7 +13,7 @@ const ROUTES = [
     path: 'oauth',
     component: DefaultLayoutComponent,
     children: [
-      { path: 'login', loadChildren: './features/login/login.module#LoginRouterModule' },
+      { path: 'login', loadChildren: './oauth/login/login.module#LoginRouterModule' },
     ],
   },
   {
@@ -20,7 +21,11 @@ const ROUTES = [
     component: DefaultLayoutComponent,
     children: [
       { path: '', redirectTo: 'list-posts', pathMatch: 'full'},
-      { path: 'list-posts', loadChildren: './features/manage-posts/list-posts/list-posts.module#ListPostsRouterModule' },
+      { 
+        path: 'list-posts',
+        canActivate: [OauthGuard], 
+        loadChildren: './features/manage-posts/list-posts/list-posts.module#ListPostsRouterModule'
+      },
     ],
   },
   {
