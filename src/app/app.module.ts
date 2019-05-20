@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { DefaultLayoutComponent, DefaultLayoutModule } from './design/default-layout';
-import { OauthGuard } from './oauth/oauth.guard';
+import { OauthGuard } from './features/oauth/oauth.guard';
 
 import { AppComponent } from './app.component';
 
@@ -14,7 +14,7 @@ const ROUTES = [
     component: DefaultLayoutComponent, children: [
       { 
         path: 'login', 
-        loadChildren: './oauth/login/login.module#LoginRouterModule' 
+        loadChildren: './features/oauth/login/login.module#LoginRouterModule' 
       },
       { 
         path: 'manage-posts',

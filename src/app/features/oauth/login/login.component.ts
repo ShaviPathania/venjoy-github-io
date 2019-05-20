@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
-import { Api } from '../../api';
+import { Api } from '../../..api';
 import { Router } from '@angular/router';
 
 @Component({
