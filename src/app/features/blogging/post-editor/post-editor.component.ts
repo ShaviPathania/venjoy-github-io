@@ -75,7 +75,7 @@ export class PostEditorComponent implements OnInit {
     const post: any = {
       title: this.postTitle.value,
       excerpt: this.postExcerpt.value,
-      fullMdPath: this.api.posts.postFullMdPath(this.postMdPath.value)
+      mdFullPath: this.api.posts.postFullMdPath(this.postMdPath.value)
     }
     if (this.post.id >= 0) post.id = this.post.id;
     await this.api.posts.save(post, this.editor.getValue());
