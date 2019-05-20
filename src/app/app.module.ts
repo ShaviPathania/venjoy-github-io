@@ -26,6 +26,16 @@ const ROUTES = [
         canActivate: [OauthGuard], 
         loadChildren: './features/manage-posts/list-posts/list-posts.module#ListPostsRouterModule'
       },
+      { 
+        path: 'post-editor',
+        canActivate: [OauthGuard], 
+        loadChildren: './features/manage-posts/post-editor/post-editor.module#PostEditorRouterModule'
+      },
+      { 
+        path: 'post-editor/:id',
+        canActivate: [OauthGuard], 
+        loadChildren: './features/manage-posts/post-editor/post-editor.module#PostEditorRouterModule'
+      },
     ],
   },
   {

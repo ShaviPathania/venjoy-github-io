@@ -2,12 +2,19 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ListPostsComponent } from './list-posts.component';
 import { RouterModule } from '@angular/router';
-import { MatFormFieldModule, MatInputModule, MatTableModule, MatPaginatorModule, MatSortModule, } from '@angular/material'; 
+import { MatFormFieldModule, MatInputModule, MatTableModule, MatPaginatorModule, MatSortModule, MatButtonModule, MatIconModule, } from '@angular/material'; 
 
 @NgModule({
   imports: [
     CommonModule,
     MatFormFieldModule,
+    MatInputModule, 
+    MatTableModule, 
+    MatPaginatorModule, 
+    MatSortModule,
+    MatButtonModule,
+    MatIconModule,
+    RouterModule,
   ],
   declarations: [ListPostsComponent]
 })

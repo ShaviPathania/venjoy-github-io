@@ -9,7 +9,7 @@ import {MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
 })
 export class ListPostsComponent implements OnInit {
 
-  displayedColumns: string[] = ['id', 'title'];
+  displayedColumns: string[] = ['id', 'title', 'actions'];
   dataSource: MatTableDataSource<any>;
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
@@ -20,11 +20,11 @@ export class ListPostsComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
     this.api.posts.list().subscribe(posts => {
-      // Assign the data to the data source for the table to render
+      posts.forEach((post, idx) => post.id = idx);
       this.dataSource = new MatTableDataSource(posts);
+      this.dataSource.paginator = this.paginator;
+      this.dataSource.sort = this.sort;
     });
   }
 
