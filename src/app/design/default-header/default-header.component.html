@@ -1,0 +1,24 @@
+<mat-toolbar>
+	<mat-toolbar-row>
+		<div routerLink="/" class="_logo">
+			<img src="https://raw.githubusercontent.com/shavipathania/venjoy-github-io/develop/src/assets/branding/logo.png" alt="Logo">
+      <span>Venjoy</span>
+    </div>
+    <span class="_spacer"></span>
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+      <mat-icon>account_circle</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button (click)="item.onClick()" *ngFor="let item of menuItems" mat-menu-item>
+        <mat-icon>{{item.icon}}</mat-icon>
+        <span>{{item.label}}</span>
+      </button>
+    </mat-menu>  
+  </mat-toolbar-row>
+
+  <mat-toolbar-row>
+    <nav>
+      <a class="_active" routerLink="/">Home</a>
+    </nav>
+  </mat-toolbar-row>
+</mat-toolbar>

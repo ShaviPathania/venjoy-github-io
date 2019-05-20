@@ -1,0 +1,18 @@
+<div class="_container">
+  <mat-card>
+		<h3>{{ post.id >= 0 ? 'Edit Post' : 'New Post' }} <button (click)="save()" mat-raised-button color="primary" [disabled]="saving" class="_save-btn">{{saving ? 'Saving' : 'Save'}}</button></h3>
+		<mat-form-field>
+			<input matInput placeholder="Post Title" [formControl]="postTitle" required>
+      <mat-error *ngIf="postTitle.invalid">{{getErrorMessage('postTitle')}}</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+			<input matInput placeholder="Post Excerpt" [formControl]="postExcerpt" required>
+      <mat-error *ngIf="postExcerpt.invalid">{{getErrorMessage('postExcerpt')}}</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+			<input matInput placeholder="Post Markdown Path" [formControl]="postMdPath" required>
+      <mat-error *ngIf="postMdPath.invalid">{{getErrorMessage('postMdPath')}}</mat-error>
+    </mat-form-field>
+    <div id="editSection"></div>
+  </mat-card>
+</div>
