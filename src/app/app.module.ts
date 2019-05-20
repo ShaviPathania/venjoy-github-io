@@ -26,8 +26,8 @@ const ROUTES = [
   {
     path: '',
     component: DefaultLayoutComponent, children: [
-      { path: '', loadChildren: './features/posts/posts.module#PostsRouterModule' },
-      { path: '**', loadChildren: './features/post/post.module#PostRouterModule' },
+      { path: '', loadChildren: './features/exhibit-posts/posts/posts.module#PostsRouterModule' },
+      { path: '**', loadChildren: './features/exhibit-posts/post/post.module#PostRouterModule' },
     ]
   },
 ];

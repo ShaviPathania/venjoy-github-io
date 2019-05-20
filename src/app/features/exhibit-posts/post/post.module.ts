@@ -3,14 +3,14 @@ import { CommonModule } from '@angular/common';
 import { PostComponent } from './post.component';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
-import { LoadingModule } from '../loading/loading.module';
+import { ProgressModule } from '../../../design/progress/progress.module';
 
 @NgModule({
   imports: [
     CommonModule,
     RouterModule,
     HttpClientModule,
-    LoadingModule,
+    ProgressModule,
   ],
   exports: [
     PostComponent
