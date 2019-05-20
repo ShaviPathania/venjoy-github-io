@@ -23,6 +23,13 @@ export class Posts {
     );
   }
 
+  retrievePostMdByPost(post: any) {
+    const url = post.mdFullPath;
+    return <Observable<string>> this.httpClient.get(url, {
+      responseType: 'text'
+    });
+  }
+
   retrievePostMdByPath(path: string) {
     const url = `assets/data/posts/${path}`;
     return <Observable<string>> this.httpClient.get(url, {
