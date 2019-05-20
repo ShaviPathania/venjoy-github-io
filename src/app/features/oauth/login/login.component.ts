@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  hide = t;
+  hide = true;
 
   error = '';
   username = new FormControl('', [Validators.required]);
