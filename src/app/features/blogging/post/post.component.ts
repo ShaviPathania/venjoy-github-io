@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { HttpClient } from '@angular/common/http';
 import * as showdown from 'showdown';
 import { DomSanitizer } from '@angular/platform-browser';
 import { Api } from '../../../api';
@@ -17,7 +16,6 @@ export class PostComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private httpClient: HttpClient,
     private domSanitizer: DomSanitizer,
     private api: Api,
   ) { }
