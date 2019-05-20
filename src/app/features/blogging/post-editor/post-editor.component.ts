@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Api } from '../../../api';
+import { Api, Post } from '../../../api';
 import { ActivatedRoute } from '@angular/router';
 import { switchMap } from 'rxjs/operators';
 import { FormControl, Validators } from '@angular/forms';
@@ -20,6 +20,8 @@ export class PostEditorComponent implements OnInit {
   postTitle = new FormControl('', [Validators.required]);
   postExcerpt = new FormControl('', [Validators.required]);
   postMdPath = new FormControl('', [Validators.required]);
+
+  saving = false;
 
   constructor(
     private api: Api,
@@ -66,6 +68,18 @@ export class PostEditorComponent implements OnInit {
 
   getErrorMessage(field: string) {
     return '';
+  }
+
+  async save() {
+    this.saving = true;
+    const post: any = {
+      title: this.postTitle.value,
+      excerpt: this.postExcerpt.value,
+      fullMdPath: this.api.posts.postFullMdPath(this.postMdPath.value)
+    }
+    if (this.post.id >= 0) post.id = this.post.id;
+    await this.api.posts.save(post);
+    this.saving = false;
   }
 
 }

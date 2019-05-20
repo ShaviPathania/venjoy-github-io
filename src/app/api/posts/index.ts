@@ -2,6 +2,14 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { Github } from '../github';
+
+export interface Post {
+  id: number
+  title: string
+  excerpt: string
+  mdFullPath: string
+}
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +17,8 @@ import { map } from 'rxjs/operators';
 export class Posts {
 
   constructor(
-    private httpClient: HttpClient
+    private httpClient: HttpClient,
+    private github: Github,
   ) { }
 
   list() {
@@ -18,8 +27,12 @@ export class Posts {
   }
 
   retrieve(id) {
-    return <Observable<any>> this.list().pipe(
-      map(posts => posts.find((p, idx) => idx == id))
+    return <Observable<Post>> this.list().pipe(
+      map((posts, idx) => {
+        const post = posts.find((p, idx) => idx == id);
+        post.id = idx;
+        return post;
+      })
     );
   }
 
@@ -39,6 +52,20 @@ export class Posts {
 
   postMdPath(post: any) {
     return post.mdFullPath.replace('assets/data/posts/', '');
+  }
+
+  postFullMdPath(mdPath: string) {
+    return 'assets/data/posts/' + mdPath;
+  }
+
+  async save(post: Post) {
+    const posts = await this.list().toPromise();
+    if (post.id >= 0) {
+      posts[post.id] = post;
+    } else {
+      posts.push(post);
+    }    
+    return this.github.saveFile('src/assets/data/posts.json', JSON.stringify(posts));
   }
 
 }

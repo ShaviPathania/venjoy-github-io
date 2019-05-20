@@ -13,3 +13,5 @@ export class Api {
   ) { }
 
 }
+
+export { Post } from './posts';

@@ -1,6 +1,6 @@
 <div class="_container">
   <mat-card>
-		<h3>{{ post.id ? 'Edit Post' : 'New Post' }} || <button (click)="save()" mat-raised-button color="primary">Save</button></h3>
+		<h3>{{ post.id >= 0 ? 'Edit Post' : 'New Post' }} <button (click)="save()" mat-raised-button color="primary" [disabled]="saving" class="_save-btn">{{saving ? 'Saving' : 'Save'}}</button></h3>
 		<mat-form-field>
 			<input matInput placeholder="Post Title" [formControl]="postTitle" required>
       <mat-error *ngIf="postTitle.invalid">{{getErrorMessage('postTitle')}}</mat-error>

@@ -52,6 +52,33 @@ export class Github {
     this.subject$.next(this.checkLoggedIn());
   }
 
+  getFile(path: string) {
+    const url = `https://api.github.com/repos/shavipathania/venjoy-github-io/contents/${path}`;
+    return this.httpClient.get(url, this.authorizedConfig()).toPromise();
+  }
+
+  async saveFile(path: string, content: string) {
+    const url = `https://api.github.com/repos/shavipathania/venjoy-github-io/contents/${path}`;
+    let githubFile = null;
+    try {
+      githubFile = await this.getFile(path);
+    } catch(error) {}
+    const data: any = {
+      message: 'auto commit',
+      content: Base64.encode(content),
+    };
+    if (githubFile) data.sha = githubFile.sha;
+    return this.httpClient.put(url, data, this.authorizedConfig()).toPromise();
+  }
+
+  private authorizedConfig() {
+    return {
+      headers: {
+        'Authorization': 'Basic ' + localStorage.getItem('github:basicAuthToken')
+      }
+    }
+  }
+
   private checkLoggedIn() {
     return localStorage.getItem('github:basicAuthToken') ? true : false;
   }
