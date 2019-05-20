@@ -19,7 +19,8 @@ const ROUTES = [
     path: 'manage-posts',
     component: DefaultLayoutComponent,
     children: [
-      { path: '', loadChildren: './features/manage-posts/manage-posts.module#ManagePostsRouterModule' },
+      { path: '', redirectTo: 'list-posts', pathMatch: 'full'},
+      { path: 'list-posts', loadChildren: './features/manage-posts/list-posts/list-posts.module#ListPostsRouterModule' },
     ],
   },
   {
