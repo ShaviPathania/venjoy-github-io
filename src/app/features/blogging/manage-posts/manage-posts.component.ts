@@ -3,11 +3,11 @@ import { Api } from '../../../api';
 import {MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
 
 @Component({
-  selector: 'app-list-posts',
-  templateUrl: './list-posts.component.html',
-  styleUrls: ['./list-posts.component.scss']
+  selector: 'app-manage-posts',
+  templateUrl: './manage-posts.component.html',
+  styleUrls: ['./manage-posts.component.scss']
 })
-export class ListPostsComponent implements OnInit {
+export class ManagePostsComponent implements OnInit {
 
   displayedColumns: string[] = ['id', 'title', 'actions'];
   dataSource: MatTableDataSource<any>;

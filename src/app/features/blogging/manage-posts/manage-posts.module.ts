@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ListPostsComponent } from './list-posts.component';
+import { ManagePostsComponent } from './manage-posts.component';
 import { RouterModule } from '@angular/router';
 import { MatFormFieldModule, MatInputModule, MatTableModule, MatPaginatorModule, MatSortModule, MatButtonModule, MatIconModule, } from '@angular/material'; 
 
@@ -16,7 +16,7 @@ import { MatFormFieldModule, MatInputModule, MatTableModule, MatPaginatorModule,
     MatIconModule,
     RouterModule,
   ],
-  declarations: [ListPostsComponent]
+  declarations: [ManagePostsComponent]
 })
 export class ListPostsModule { }
 
@@ -26,7 +26,7 @@ export class ListPostsModule { }
     RouterModule.forChild([
       {
         path: '', 
-        component: ListPostsComponent
+        component: ManagePostsComponent
       }
     ])
   ],

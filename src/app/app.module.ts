@@ -10,39 +10,34 @@ import { AppComponent } from './app.component';
 
 const ROUTES = [
   {
-    path: 'oauth',
-    component: DefaultLayoutComponent,
-    children: [
-      { path: 'login', loadChildren: './oauth/login/login.module#LoginRouterModule' },
-    ],
-  },
-  {
-    path: 'manage-posts',
-    component: DefaultLayoutComponent,
-    children: [
-      { path: '', redirectTo: 'list-posts', pathMatch: 'full'},
+    path: '',
+    component: DefaultLayoutComponent, children: [
       { 
-        path: 'list-posts',
+        path: 'login', 
+        loadChildren: './oauth/login/login.module#LoginRouterModule' 
+      },
+      { 
+        path: 'manage-posts',
         canActivate: [OauthGuard], 
-        loadChildren: './features/manage-posts/list-posts/list-posts.module#ListPostsRouterModule'
+        loadChildren: './features/blogging/manage-posts/manage-posts.module#ManagePostsRouterModule'
       },
       { 
         path: 'post-editor',
         canActivate: [OauthGuard], 
-        loadChildren: './features/manage-posts/post-editor/post-editor.module#PostEditorRouterModule'
+        loadChildren: './features/blogging/post-editor/post-editor.module#PostEditorRouterModule'
       },
       { 
         path: 'post-editor/:id',
         canActivate: [OauthGuard], 
-        loadChildren: './features/manage-posts/post-editor/post-editor.module#PostEditorRouterModule'
+        loadChildren: './features/blogging/post-editor/post-editor.module#PostEditorRouterModule'
       },
-    ],
-  },
-  {
-    path: '',
-    component: DefaultLayoutComponent, children: [
-      { path: '', loadChildren: './features/exhibit-posts/posts/posts.module#PostsRouterModule' },
-      { path: '**', loadChildren: './features/exhibit-posts/post/post.module#PostRouterModule' },
+      { 
+        path: '', 
+        loadChildren: './features/blogging/posts/posts.module#PostsRouterModule' 
+      },
+      { 
+        path: '**', loadChildren: './features/blogging/post/post.module#PostRouterModule' 
+      },
     ]
   },
 ];
