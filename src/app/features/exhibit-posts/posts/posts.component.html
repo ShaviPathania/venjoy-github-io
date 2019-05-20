@@ -1,5 +1,5 @@
 <div class="_container">
-  <app-loader [loading]="!posts.length">
+  <app-progress [loading]="!posts.length">
     <app-post-preview *ngFor="let post of posts" [post]="post"></app-post-preview>
-  </app-loader>
+  </app-progress>
 </div>
